@@ -11,13 +11,19 @@ All properties of the service will be copied including the autoscaling policy.
 ## Installation (npm)
 - npm install ecs-service-clone
 
-## Use docker
+## Syntax
 ```
-$ docker run -ti -e AWS_ACCESS_KEY_ID <ACCESS_KEY_ID> -e AWS_SECRET_ACCESS_KEY <SECRET_ACCESS_KEY> -e AWS_DEFAULT_REGION <DEFAULT_REGION> giannandrea/ecs-duplicator
+$ ecs-duplicator --cluster <source-ecs-cluster> --service <source-ecs-service> --clusterCopyName <destination-ecs-cluster> --serviceCopyName <destination-ecs-service>
+```
+
+## Using docker
+```
+$ docker run -ti -e AWS_ACCESS_KEY_ID="ACCESS_KEY_ID" -e AWS_SECRET_ACCESS_KEY="SECRET_ACCESS_KEY" -e AWS_DEFAULT_REGION="DEFAULT_REGION" giannandrea/ecs-duplicator sh
+/app # ecs-duplicator --cluster <source-ecs-cluster> --service <source-ecs-service> --clusterCopyName <destination-ecs-cluster> --serviceCopyName <destination-ecs-service>
 ```
 
 ## Example
 ```
-$ ecs-duplicator --cluster <source-ecs-cluster> --service <source-ecs-service> --clusterCopyName <destination-ecs-cluster> --serviceCopyName <destination-ecs-service>
+$ ecs-duplicator --cluster mycluster --service my-service --clusterCopyName newcluster --serviceCopyName my-new-service
 ```
 ##
