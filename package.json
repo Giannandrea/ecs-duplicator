@@ -1,6 +1,6 @@
 {
   "name": "ecs-duplicator",
-  "version": "0.9.1",
+  "version": "0.9.3",
   "description": "Command line tool to copy an AWS ECS service to another service with the same name. Ideal for creating a 'canary service' to run against the same ELB/Target group",
   "main": "index.js",
   "keywords": [

@@ -35,6 +35,7 @@ const serviceCopyParams = {
 console.log("\n  ***** ecs-duplicator *****  \n");
 console.log(`- Retrieving configuration from service/${clusterName}/${serviceName} ....\n`);
 const serviceCopyData = await ECSLIb.getService(clusterName, serviceCopyName, region);
+if (!serviceCopyData ) {console.log(`Service not found ervice/${clusterName}/${serviceName} \n`); process.exit(144)};
 console.log(`- Cloning service in service/${clusterCopyName}/${serviceCopyName} ....\n`);
 const data = await ECSLIb.copyService({ serviceCopyName, clusterCopyName, serviceCopyData, desiredCount, clusterName, region});
 console.log("- service cloned, please wait for the end of deploy.\n");
